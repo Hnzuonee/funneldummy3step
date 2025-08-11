@@ -57,13 +57,17 @@ img,svg{max-width:100%;display:block}
 .link .title{font-weight:700}
 .link .desc{color:var(--muted);font-size:13px;margin-top:2px}
 
-.collapsible summary{cursor:pointer;font-weight:700}
-.collapsible .content{color:var(--muted);margin-top:8px}
-
 .progress{height:4px;background:#0f1216;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-top:8px}
 .bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .6s ease}
 
 .footer{text-align:center;color:#c7ccda;opacity:.85;margin-top:18px;font-size:13px}
+
+/* bio block — compact, keeps CTA above fold */
+.bio{padding:12px;margin-top:8px;background:#101319;border:1px solid var(--line);border-radius:14px}
+.bio-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.bio-title{font-weight:800;font-size:14px;letter-spacing:.2px}
+.bio-list{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.bio-list li{background:#0f1216;border:1px solid var(--line);border-radius:10px;padding:6px 8px;font-size:13px;color:#d6daea}
 
 /* flip clock */
 .flip{display:flex;gap:8px;align-items:center;justify-content:center;margin:2px 0}
@@ -74,7 +78,7 @@ img,svg{max-width:100%;display:block}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:#0f1216;border:1px solid var(--line);
   color:#e8ecf7;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:50}
 
-/* desktop vylepšení */
+/* desktop enhancements */
 @media (min-width: 900px){
   .hero{grid-template-columns:1.1fr 1fr;gap:18px}
   .h1{font-size:34px}
