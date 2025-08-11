@@ -1,26 +1,26 @@
 (function(){
-  // vlajka
+  // flag
   function flagEmoji(cc){ if(!cc) return '🌍'; const C=cc.toUpperCase(); return String.fromCodePoint(...[...C].map(c=>127397+c.charCodeAt())); }
-  const lang = navigator.language || 'cs-CZ';
-  const cc = (lang.split('-')[1]||'CZ');
+  const lang = navigator.language || 'en-US';
+  const cc = (lang.split('-')[1]||'US');
   document.getElementById('flagL2').textContent = flagEmoji(cc);
 
-  // geo headline (podle time-zóny, fallback „ve tvé oblasti“)
+  // geo headline (timezone → city; fallback “your area”)
   function cityFromTZ(){
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-    const map = {'Europe/Prague':'Praze','Europe/Bratislava':'Bratislavě','Europe/Berlin':'Berlíně','Europe/Vienna':'Vídni'};
-    return map[tz] || 'tvé oblasti';
+    const map = {'Europe/Prague':'Prague','Europe/Bratislava':'Bratislava','Europe/Berlin':'Berlin','Europe/Vienna':'Vienna'};
+    return map[tz] || 'your area';
   }
   const joinedKey='joinedTodaySeed';
   let joined = parseInt(localStorage.getItem(joinedKey)||'0',10);
   if(!joined){ joined = Math.floor(Math.random()*140)+80; localStorage.setItem(joinedKey,String(joined)); }
-  document.getElementById('geoHeadline').textContent = `Dnes se přidalo ${joined} fanoušků v ${cityFromTZ()}`;
+  document.getElementById('geoHeadline').textContent = `Today, ${joined} fans joined in ${cityFromTZ()}`;
 
   // deadline label 23:59
   const now=new Date(); const dl=new Date(now); dl.setHours(23,59,0,0); if(dl<now) dl.setDate(dl.getDate()+1);
   document.getElementById('deadlineL2').textContent = dl.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
 
-  // 10min session countdown (persist v localStorage)
+  // 10-minute session timer (persist per device)
   const tKey='sessionDeadline10m';
   let end = parseInt(localStorage.getItem(tKey)||'0',10);
   const nowMs = Date.now();
@@ -41,7 +41,7 @@
   }
   tick(); setInterval(tick, 1000);
 
-  // spots left (mírně klesá, ale ne pod 7)
+  // spots left (lightly decreases, not below 7)
   const spotsKey='spotsLeftSeed';
   let spots=parseInt(localStorage.getItem(spotsKey)||'0',10);
   if(!spots){ spots = Math.floor(Math.random()*14)+27; localStorage.setItem(spotsKey,String(spots)); }
@@ -49,12 +49,12 @@
   function updSpots(){ if(Math.random()<0.35 && spots>7){ spots--; localStorage.setItem(spotsKey,String(spots)); } spotsEl.textContent=spots; }
   updSpots(); setInterval(updSpots, 45000);
 
-  // CTA → progress (dummy)
+  // CTA -> progress (demo)
   const bar=document.getElementById('barL2');
   document.getElementById('ctaEnter').addEventListener('click', (e)=>{
     e.preventDefault();
     bar.style.width='65%';
     setTimeout(()=>bar.style.width='100%', 420);
-    setTimeout(()=> alert('DEMO: tady by v ostré verzi proběhla validace a bezpečný redirect.'), 880);
+    setTimeout(()=> alert('DEMO: In production, this would POST, validate, then 303 redirect.'), 880);
   });
 })();
