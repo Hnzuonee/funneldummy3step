@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Members Gate</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="robots" content="noindex,nofollow">
+</head>
+<body class="theme-evening">
+  <div class="container">
+    <div class="header">
+      <img src="assets/img/logo.svg" alt="VIP Lounge logo">
+      <div class="sub">Secure members‑only access</div>
+    </div>
+
+    <div class="card center">
+      <h2 id="geoHeadline">Dnes se přidalo 128 fanoušků ve tvé oblasti</h2>
+      <div class="small">Dostupné do <b id="deadline">23:59</b> (tvého času)</div>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <img src="assets/img/hero2.jpg" alt="Members gate">
+      </div>
+      <div class="claim">
+        <div class="card center">
+          <div id="flip" class="flip">
+            <div class="unit" id="hh"></div> :
+            <div class="unit" id="mm"></div> :
+            <div class="unit" id="ss"></div>
+          </div>
+          <div class="small mt-12">Čas do uzavření dnešní nabídky</div>
+        </div>
+        <div class="mt-16 small">Zbývá <b id="spots">37</b> míst</div>
+        <div class="mt-12">
+          <button id="enter" class="btn">Enter Private Area <span id="flag">🇨🇿</span></button>
+        </div>
+        <div class="progress mt-16"><div class="bar" id="bar"></div></div>
+        <div class="small mt-12">No ads • 100% privacy • Encrypted session</div>
+      </div>
+    </div>
+
+    <div class="footer center mt-28">© 2025 VIP Lounge • Privacy • Terms</div>
+  </div>
+
+  <div class="notice-stream" id="stream"></div>
+  <script src="assets/js/gate.js"></script>
+</body>
+</html>
