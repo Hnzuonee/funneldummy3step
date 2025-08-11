@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Soukromý klub — Vstup</title>
+  <title>Private Club — Gate</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <meta name="robots" content="noindex,nofollow">
 </head>
@@ -12,22 +12,20 @@
     <div class="brand">
       <div class="brand-mark" aria-hidden="true"></div>
       <div class="brand-text">
-        <div class="brand-title">Soukromý klub</div>
-        <div class="brand-sub">Členská zóna</div>
+        <div class="brand-title">Private Club</div>
+        <div class="brand-sub">Members area</div>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- jemné FOMO, mobile-first -->
     <section class="card center section">
-      <h2 id="geoHeadline" class="h2">Dnes se přidalo 128 fanoušků ve&nbsp;tvé oblasti</h2>
-      <div class="micro">Dostupné do <b id="deadlineL2">23:59</b> (tvého času)</div>
+      <h2 id="geoHeadline" class="h2">Today, 128 fans joined in your area</h2>
+      <div class="micro">Available until <b id="deadlineL2">23:59</b> (your time)</div>
     </section>
 
     <section class="hero card">
       <div class="hero-media">
-        <!-- stejný styl SFW SVG, jiný gradient -->
         <svg viewBox="0 0 1200 700" class="hero-svg" role="img" aria-label="SFW teaser">
           <defs>
             <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
@@ -48,29 +46,29 @@
       </div>
 
       <div class="hero-copy">
-        <!-- 10min session timer (per zařízení) -->
-        <div class="flip" aria-label="Čas do uzavření">
+        <!-- 10-minute session timer (per device) -->
+        <div class="flip" aria-label="Time remaining">
           <div class="unit" id="hh"></div> :
           <div class="unit" id="mm"></div> :
           <div class="unit" id="ss"></div>
         </div>
 
-        <p class="micro mt-8">Zbývá <b id="spots">37</b> míst</p>
+        <p class="micro mt-8">Only <b id="spots">37</b> spots left</p>
 
         <button id="ctaEnter" class="btn btn-primary">
-          <span>Vstoupit do&nbsp;privátní zóny</span> <span class="flag" id="flagL2">🇨🇿</span>
+          <span>Enter private area</span> <span class="flag" id="flagL2">🌍</span>
         </button>
 
         <div class="progress" aria-hidden="true">
           <div id="barL2" class="bar"></div>
         </div>
 
-        <p class="micro">Bez reklam • 100 % soukromí • Osobní přístup</p>
+        <p class="micro">No ads • 100% privacy • Personal access</p>
       </div>
     </section>
 
     <footer class="footer">
-      © 2025 Soukromý klub • <span class="muted">Privacy</span> • <span class="muted">Terms</span>
+      © 2025 Private Club • <span class="muted">Privacy</span> • <span class="muted">Terms</span>
     </footer>
   </main>
 
