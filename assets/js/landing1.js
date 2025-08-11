@@ -1,16 +1,16 @@
 (function(){
-  // detekce in-app (IG/FB/TikTok)
+  // in-app detection (IG/FB/TikTok)
   const ua = navigator.userAgent || "";
   const inApp = /(Instagram|FBAN|FBAV|Facebook|TikTok)/i.test(ua);
   if(inApp){ document.getElementById('stickyInApp').hidden = false; }
 
-  // CZ vlajka podle jazyka (fallback na 🌍)
+  // flag based on language
   function flagEmoji(cc){ if(!cc) return '🌍'; const C=cc.toUpperCase(); return String.fromCodePoint(...[...C].map(c=>127397+c.charCodeAt())); }
-  const lang = navigator.language || 'cs-CZ';
-  const cc = (lang.split('-')[1]||'CZ');
+  const lang = navigator.language || 'en-US';
+  const cc = (lang.split('-')[1]||'US');
   document.getElementById('flagL1').textContent = flagEmoji(cc);
 
-  // deadline dnes 23:59 (lokálně)
+  // deadline today 23:59 (local)
   const now = new Date();
   const dl = new Date(now); dl.setHours(23,59,0,0); if(dl<now) dl.setDate(dl.getDate()+1);
   document.getElementById('deadlineL1').textContent = dl.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
@@ -19,9 +19,9 @@
   const key='insideCountSeed';
   let count = localStorage.getItem(key);
   if(!count){ count = String(Math.floor(Math.random()*2500)+4200); localStorage.setItem(key,count); }
-  document.getElementById('insideCount').textContent = (count+'+').replace(/\B(?=(\d{3})+(?!\d))/g,' ');
+  document.getElementById('insideCount').textContent = (count+'+').replace(/\B(?=(\d{3})+(?!\d))/g,',');
 
-  // CTA → toast + progress + přechod na gate.html (dummy)
+  // CTA -> toast + progress + navigate to gate.html (demo)
   const bar = document.getElementById('barL1');
   const toast = document.getElementById('toastL1');
   document.getElementById('ctaUnlock').addEventListener('click', (e)=>{
