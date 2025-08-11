@@ -1,33 +1,33 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Soukromý klub — Landing</title>
+  <title>Private Club — Landing</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <meta name="robots" content="noindex,nofollow">
 </head>
 <body class="theme-auto">
-  <!-- zobrazuje se jen v IG/FB/TikTok in-app -->
+  <!-- Show only if opened inside in-app browsers -->
   <div id="stickyInApp" class="sticky-inapp" hidden>
-    Pro bezpečný přístup otevři v prohlížeči: v IG klepni na ••• → <b>Open in Browser</b>.
+    For a secure experience, open in your browser: tap ••• → <b>Open in Browser</b>.
   </div>
 
   <header class="site-header">
     <div class="brand">
       <div class="brand-mark" aria-hidden="true"></div>
       <div class="brand-text">
-        <div class="brand-title">Soukromý klub</div>
-        <div class="brand-sub">Aktuality • Zákulisí • Komunita</div>
+        <div class="brand-title">Private Club</div>
+        <div class="brand-sub">Updates • Behind-the-scenes • Community</div>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- HERO + CTA nad přehybem (mobile-first) -->
+    <!-- HERO + CTA above the fold (mobile-first) -->
     <section class="hero card">
       <div class="hero-media">
-        <!-- SFW inline SVG "teaser" (žádné externí obrázky) -->
+        <!-- SFW inline SVG teaser (no external assets) -->
         <svg viewBox="0 0 1200 700" class="hero-svg" role="img" aria-label="SFW teaser">
           <defs>
             <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
@@ -48,22 +48,40 @@
       </div>
 
       <div class="hero-copy">
-        <h1 class="h1">Soukromý přístup bez reklam</h1>
-        <p class="lead">Diskrétně, bez rušení a s <b>osobním přístupem</b>. Všechno na jednom místě.</p>
+        <h1 class="h1">Private access without ads</h1>
+        <p class="lead">Discreet, distraction-free, with <b>personal access</b> — all in one place.</p>
 
+        <!-- CTA above the fold -->
         <button id="ctaUnlock" class="btn btn-primary">
-          <span>Odemknout přístup</span> <span class="flag" id="flagL1">🇨🇿</span>
+          <span>Unlock access</span> <span class="flag" id="flagL1">🌍</span>
         </button>
 
+        <!-- mini trust row under CTA -->
         <div class="trust-row">
-          <span class="badge"><span class="dot"></span> Bez reklam</span>
-          <span class="badge"><span class="dot"></span> 100 % soukromí</span>
-          <span class="badge"><span class="dot"></span> Osobní přístup</span>
+          <span class="badge"><span class="dot"></span> No ads</span>
+          <span class="badge"><span class="dot"></span> 100% privacy</span>
+          <span class="badge"><span class="dot"></span> Personal access</span>
         </div>
 
         <p class="micro">
-          Už <b id="insideCount">5 700+</b> uvnitř • Dostupné dnes do <b id="deadlineL1">23:59</b> (tvého času)
+          Already <b id="insideCount">5,700+</b> inside • Available today until <b id="deadlineL1">23:59</b> (your time)
         </p>
+
+        <!-- About me — visible immediately, compact card -->
+        <div class="bio card">
+          <div class="bio-head">
+            <span class="bio-title">About me</span>
+          </div>
+          <ul class="bio-list">
+            <li><b>Name:</b> Ava</li>
+            <li><b>Height:</b> 170&nbsp;cm</li>
+            <li><b>Hair:</b> blonde</li>
+            <li><b>Eyes:</b> blue</li>
+          </ul>
+          <p class="micro mt-8">
+            I share travel, shoots and daily moments. Private area includes behind-the-scenes previews (SFW).
+          </p>
+        </div>
 
         <div class="progress" aria-hidden="true">
           <div id="barL1" class="bar"></div>
@@ -71,17 +89,7 @@
       </div>
     </section>
 
-    <!-- DŮVĚRA + obsah (sekundární, pod přehybem) -->
-    <section class="card section">
-      <details class="collapsible">
-        <summary>O&nbsp;modelce</summary>
-        <div class="content">
-          <p><b>Jméno:</b> Ava • <b>Výška:</b> 170 cm • <b>Vlasy:</b> blond • <b>Oči:</b> modré</p>
-          <p>Miluje cestování, focení a fitness. V soukromé zóně sdílí zákulisí a každodenní momenty (SFW náhledy).</p>
-        </div>
-      </details>
-    </section>
-
+    <!-- Secondary, under the fold (optional safe links) -->
     <section class="section">
       <div class="links">
         <a class="link card" href="#" role="button" aria-disabled="true">
@@ -90,21 +98,21 @@
         </a>
         <a class="link card" href="#" role="button" aria-disabled="true">
           <div class="title">TikTok</div>
-          <div class="desc">Krátká videa</div>
+          <div class="desc">Short clips</div>
         </a>
         <a class="link card" href="#" role="button" aria-disabled="true">
           <div class="title">Blog</div>
-          <div class="desc">Novinky & fotky (SFW)</div>
+          <div class="desc">News & photos (SFW)</div>
         </a>
       </div>
     </section>
 
     <footer class="footer">
-      © 2025 Soukromý klub • <span class="muted">Privacy</span> • <span class="muted">Terms</span>
+      © 2025 Private Club • <span class="muted">Privacy</span> • <span class="muted">Terms</span>
     </footer>
   </main>
 
-  <div id="toastL1" class="toast" role="status" aria-live="polite">Připravuji tvoji VIP session…</div>
+  <div id="toastL1" class="toast" role="status" aria-live="polite">Preparing your VIP session…</div>
   <script src="assets/js/landing1.js"></script>
 </body>
 </html>
