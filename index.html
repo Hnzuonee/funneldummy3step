@@ -2,67 +2,109 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Private Club — Landing</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Soukromý klub — Landing</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <meta name="robots" content="noindex,nofollow">
 </head>
-<body class="theme-morning">
-  <div id="sticky" class="sticky-inapp center">Pro bezpečný přístup otevři v prohlížeči: v IG klepni na ••• → <b>Open in Browser</b>.</div>
-  <div class="container">
-    <div class="header">
-      <img src="assets/img/logo.svg" alt="VIP Lounge logo">
-      <div class="sub">Updates • Behind‑the‑scenes • Community</div>
-    </div>
+<body class="theme-auto">
+  <!-- zobrazuje se jen v IG/FB/TikTok in-app -->
+  <div id="stickyInApp" class="sticky-inapp" hidden>
+    Pro bezpečný přístup otevři v prohlížeči: v IG klepni na ••• → <b>Open in Browser</b>.
+  </div>
 
-    <div class="hero">
-      <div class="card">
-        <img src="assets/img/hero1.jpg" alt="SFW teaser">
-      </div>
-      <div class="claim">
-        <h1>Soukromý přístup bez reklam</h1>
-        <p>Bezpečně. Diskrétně. Jen pro členy — bez rušení a sledování.</p>
-        <div class="mt-12">
-          <button id="cta" class="btn"><span id="ctaLabel">Odemknout přístup</span> <span class="flag" id="flag">🇨🇿</span></button>
-        </div>
-        <div class="mt-12 badges row">
-          <div class="badge"><span class="dot"></span> No ads</div>
-          <div class="badge"><span class="dot"></span> 100% privacy</div>
-          <div class="badge"><span class="dot"></span> Encrypted connection</div>
-        </div>
-        <div class="mt-12 small">Už <b id="insideCount">5 700+</b> uvnitř • Dostupné dnes do <b id="deadline">23:59</b> (tvého času)</div>
-        <details class="collapsible mt-16">
-          <summary>O modelce</summary>
-          <div class="content mt-8">
-            <p>Jméno: Ava • Výška: 170 cm • Vlasy: blond • Oči: modré</p>
-            <p>Miluje cestování, focení a fitness. V soukromé zóně sdílí zákulisí focení a každodenní momenty (SFW náhledy).</p>
-          </div>
-        </details>
-        <div class="progress mt-16"><div class="bar" id="bar"></div></div>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div class="brand-text">
+        <div class="brand-title">Soukromý klub</div>
+        <div class="brand-sub">Aktuality • Zákulisí • Komunita</div>
       </div>
     </div>
+  </header>
 
-    <div class="mt-20">
+  <main class="container">
+    <!-- HERO + CTA nad přehybem (mobile-first) -->
+    <section class="hero card">
+      <div class="hero-media">
+        <!-- SFW inline SVG "teaser" (žádné externí obrázky) -->
+        <svg viewBox="0 0 1200 700" class="hero-svg" role="img" aria-label="SFW teaser">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#ff7b9a"/>
+              <stop offset="1" stop-color="#748bff"/>
+            </linearGradient>
+            <radialGradient id="r1" cx="80%" cy="20%" r="80%">
+              <stop offset="0" stop-color="#ffffff" stop-opacity=".25"/>
+              <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="1200" height="700" fill="url(#g1)"/>
+          <circle cx="260" cy="260" r="110" fill="rgba(255,255,255,.85)"/>
+          <path d="M130,450 Q260,380 390,450 Q410,560 130,560 Z" fill="rgba(255,255,255,.75)"/>
+          <ellipse cx="260" cy="560" rx="190" ry="70" fill="rgba(255,255,255,.55)"/>
+          <rect x="0" y="0" width="1200" height="700" fill="url(#r1)"/>
+        </svg>
+      </div>
+
+      <div class="hero-copy">
+        <h1 class="h1">Soukromý přístup bez reklam</h1>
+        <p class="lead">Diskrétně, bez rušení a s <b>osobním přístupem</b>. Všechno na jednom místě.</p>
+
+        <button id="ctaUnlock" class="btn btn-primary">
+          <span>Odemknout přístup</span> <span class="flag" id="flagL1">🇨🇿</span>
+        </button>
+
+        <div class="trust-row">
+          <span class="badge"><span class="dot"></span> Bez reklam</span>
+          <span class="badge"><span class="dot"></span> 100 % soukromí</span>
+          <span class="badge"><span class="dot"></span> Osobní přístup</span>
+        </div>
+
+        <p class="micro">
+          Už <b id="insideCount">5 700+</b> uvnitř • Dostupné dnes do <b id="deadlineL1">23:59</b> (tvého času)
+        </p>
+
+        <div class="progress" aria-hidden="true">
+          <div id="barL1" class="bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DŮVĚRA + obsah (sekundární, pod přehybem) -->
+    <section class="card section">
+      <details class="collapsible">
+        <summary>O&nbsp;modelce</summary>
+        <div class="content">
+          <p><b>Jméno:</b> Ava • <b>Výška:</b> 170 cm • <b>Vlasy:</b> blond • <b>Oči:</b> modré</p>
+          <p>Miluje cestování, focení a fitness. V soukromé zóně sdílí zákulisí a každodenní momenty (SFW náhledy).</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="section">
       <div class="links">
-        <a class="link" href="#" onclick="return false;">
+        <a class="link card" href="#" role="button" aria-disabled="true">
           <div class="title">YouTube</div>
           <div class="desc">Highlights & Q&A</div>
         </a>
-        <a class="link" href="#" onclick="return false;">
+        <a class="link card" href="#" role="button" aria-disabled="true">
           <div class="title">TikTok</div>
-          <div class="desc">Short clips</div>
+          <div class="desc">Krátká videa</div>
         </a>
-        <a class="link" href="#" onclick="return false;">
+        <a class="link card" href="#" role="button" aria-disabled="true">
           <div class="title">Blog</div>
           <div class="desc">Novinky & fotky (SFW)</div>
         </a>
       </div>
-    </div>
+    </section>
 
-    <div class="footer center mt-28">© 2025 VIP Lounge • Privacy • Terms</div>
-  </div>
+    <footer class="footer">
+      © 2025 Soukromý klub • <span class="muted">Privacy</span> • <span class="muted">Terms</span>
+    </footer>
+  </main>
 
-  <div id="toast" class="toast">Připravuji tvoji VIP session…</div>
+  <div id="toastL1" class="toast" role="status" aria-live="polite">Připravuji tvoji VIP session…</div>
   <script src="assets/js/landing1.js"></script>
 </body>
 </html>
